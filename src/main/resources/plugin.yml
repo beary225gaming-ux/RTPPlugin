@@ -1,0 +1,20 @@
+name: RTPPlugin
+version: 1.0.0
+main: com.rtpplugin.rtp.RTPPlugin
+api-version: 1.21
+description: Random Teleport plugin with GUI, countdown, cooldowns, and safe landing.
+authors: [Generated]
+
+commands:
+  rtp:
+    description: Randomly teleport to a location in a chosen world.
+    usage: /rtp
+    permission: rtp.use
+
+permissions:
+  rtp.use:
+    description: Allows the player to use /rtp
+    default: true
+  rtp.bypass.cooldown:
+    description: Bypass the RTP cooldown
+    default: op

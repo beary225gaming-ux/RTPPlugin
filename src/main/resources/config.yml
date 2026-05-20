@@ -1,0 +1,63 @@
+# ============================================================
+#  RTPPlugin Configuration
+# ============================================================
+
+# Cooldown in seconds between RTP uses (set to 0 to disable)
+cooldown: 300
+
+# Pre-teleport countdown in seconds (shown in action bar)
+# Players must stand still during this countdown or it cancels
+pre_teleport_countdown: 5
+
+# World settings
+worlds:
+
+  overworld:
+    enabled: true
+    # The display name shown in the GUI
+    display_name: "Overworld"
+    # The actual world name on your server
+    world_name: "world"
+    # Minimum distance from 0,0 the player can land (blocks)
+    min_distance: 1000
+    # Maximum distance from 0,0 the player can land (blocks)
+    max_distance: 10000
+    # Size shown in the GUI lore (cosmetic — set to match your world border)
+    world_size: 20000
+
+  nether:
+    enabled: true
+    display_name: "Nether"
+    world_name: "world_nether"
+    min_distance: 500
+    max_distance: 5000
+    world_size: 10000
+
+  end:
+    enabled: true
+    display_name: "The End"
+    world_name: "world_the_end"
+    min_distance: 1000
+    max_distance: 5000
+    world_size: 10000
+
+# Roles/groups that bypass the cooldown
+# These are permission nodes — grant them to groups in your permissions plugin
+# By default rtp.bypass.cooldown is included; add more here if needed
+bypass_permissions:
+  - rtp.bypass.cooldown
+  - rtp.vip
+  - rtp.admin
+
+# Maximum attempts to find a safe landing spot before giving up
+max_find_attempts: 50
+
+# Messages (supports & color codes)
+messages:
+  cooldown: "&cYou must wait &e{time} &cseconds before using /rtp again."
+  teleporting: "&aTeleporting in &e{countdown}&a... &7(Don't move!)"
+  cancelled: "&cTeleportation cancelled! You moved."
+  teleported: "&aTeleported to &e{world}&a!"
+  no_safe_spot: "&cCould not find a safe location. Please try again."
+  world_disabled: "&cThat world is currently disabled."
+  gui_title: "&8&lChoose a World"
